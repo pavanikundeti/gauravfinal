@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/PartnerPortal/FileContentIndex/e27c1e61-5295-4b35-a70f-6d4aef484e42.vsidx
+/.vs/PartnerPortal/FileContentIndex/ae530f88-b741-40b7-bd6f-14238bf6c851.vsidx
+/.vs/PartnerPortal/FileContentIndex/73d1fa84-02fc-4aa4-90da-1ea6414f777d.vsidx
+/.vs/PartnerPortal/FileContentIndex/3e80e268-0999-4f25-97aa-0f74c6dc6c07.vsidx
+/.vs/PartnerPortal/FileContentIndex/234e5bf2-008d-4cec-9931-8e753502581e.vsidx
+/.vs/PartnerPortal/FileContentIndex/11493458-4bcf-40be-b30d-cb472ff15b72.vsidx
+*.vsidx
+/.vs/PartnerPortal/v17/.suo
+/.vs/PartnerPortal/DesignTimeBuild/.dtbcache.v2
+/angular/obj/Debug/PartnerPortal.UI.esproj.FileListAbsolute.txt
+/node_modules/ng2-search-filter
+/.vs/PartnerPortal/FileContentIndex/write.lock

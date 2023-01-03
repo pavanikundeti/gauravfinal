@@ -1,0 +1,110 @@
+<main id="main">
+  <div class="pagetitle">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Skills/Profile</h1>
+      </div>
+      <div class="col-sm-6 text-end">
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                data-bs-target="#addSkillset" routerLink="skills-list/add-skills">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+
+            <div class="main-table">
+              <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="example_length">
+                      <label>
+                        Show
+                        <select name="example_length" aria-controls="example"
+                                class="form-select form-select-sm">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select>
+                        entries
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div id="example_filter" class="dataTables_filter">
+                      <label>
+                        Search:
+                        <input type="search" class="form-control form-control-sm" placeholder=""
+                               aria-controls="example">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <table id="example" class="table" style="width:100%">
+                  <thead>
+                    <tr>
+
+
+                      <th>Skilll</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let skill of skills">
+
+                      <td>{{skill.skill}}</td>
+                      <a >
+                        <i class="bi bi-pencil-square" data-toggle="tooltip"
+                           title="Edit"></i>
+                      </a>
+                      <a class="me-3 text-danger" data-bs-toggle="modal"
+                         data-bs-target="#deleteModal"><i class="bi bi-trash"></i></a>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-5">
+                <div class="dataTables_info" id="example_info" role="status" aria-live="polite">
+                  Showing 1 to 10 of 12 entries
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
+                  <ul class="pagination">
+                    <li class="paginate_button page-item previous disabled" id="example_previous">
+                      <a href="#" aria-controls="example" data-dt-idx="0" tabindex="0"
+                         class="page-link">Previous</a>
+                    </li>
+                    <li class="paginate_button page-item active">
+                      <a href="#" aria-controls="example" data-dt-idx="1" tabindex="0"
+                         class="page-link">1</a>
+                    </li>
+                    <li class="paginate_button page-item ">
+                      <a href="#" aria-controls="example"
+                         data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                    </li>
+                    <li class="paginate_button page-item next" id="example_next">
+                      <a href="#" aria-controls="example" data-dt-idx="3" tabindex="0"
+                         class="page-link">Next</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

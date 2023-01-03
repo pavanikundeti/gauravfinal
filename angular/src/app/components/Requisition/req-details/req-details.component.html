@@ -1,0 +1,310 @@
+<main id="main">
+    <div class="pagetitle">
+      <div class="row">
+        <div class="col-sm-6"><h1>Requisition</h1></div>
+        <div class="col-sm-6 text-end">
+          <button class="btn btn-dark btn-sm">Nudge</button>
+        </div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="divFilter_bg">
+                <div class="row">
+                  <div class="col-sm-3">
+                    
+                    <label class="col-form-label">Req #</label><br />
+                    <!--<input type="text" name="requisitionID" [(ngModel)]="requisitionDetails[0].requisitionID"  readonly />-->
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].requisitionID" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Potential ID</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].potentialNumber" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Complexity</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].complexity" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Requisition Date</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].requisitionDate" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Expected Response Deadline Date</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].deadlineDate" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Client Name</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].clientName" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Project Type</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].projectType" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Sales Person</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].potentialNumber" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">PM Name</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].potentialNumber" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label">Requisition Status</label>
+                    <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].requisitionStatus" readonly></label>
+                  </div>
+                  <div class="col-sm-3">
+                    <label class="col-form-label"></label>
+                    <label id="lblProjectExpectedStartDate" class="form-control-plaintext"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <h4 class="heading-btm mt-3 mb-3">General Information</h4>
+                <div class="accordion mb-5" id="accordionPanelsStayOpenExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading1">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general-in01" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Job Description
+                      </button>
+                    </h2>
+                    <div id="general-in01" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading1">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <label class="col-form-label">Job Description / Specific Skillset</label>
+                            <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].jobDescription" readonly></label>
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="col-form-label">Duration / Tenure</label>
+                            <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].duration"  readonly></label>
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="col-form-label">Shift timing / TimeZone / Overlap</label>
+                            <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].shiftTimings" readonly></label>
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="col-form-label">Number of resources</label>
+                            <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].noOfResources" readonly></label>
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="col-form-label">Open Positions</label>
+                            <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].openPositions" readonly></label>
+                          </div>
+                        </div><br />
+                        <div class="desc-list-info">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <h6 class="col-form-label">Key </h6>
+                              <p class="col-form-label">Developer Responsibilities:</p>
+                              <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].keyDescription" readonly></label>
+
+                              <div class="mt-3"><a href="">JD</a></div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <label id="lbl" class="col-form-label">Preferred Education</label><br />
+                                  <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].preferredEducation" readonly></label>
+                                </div>
+                                <div class="col-md-6">
+                                  <label id="lbl" class="col-form-label">Minimum experience</label>
+                                  <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].minExperience" readonly></label>
+                                </div>
+                                <div class="col-md-6">
+                                  <label id="lbl" class="col-form-label">Maximum experience</label>
+                                  <label> <input type="text" class="form-control" name="ReqID" [(ngModel)]="requisitionDetails[0].MaxExperience" readonly></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in02" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Skills and Experience
+                      </button>
+                    </h2>
+                    <div id="general-in02" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading2">
+                      <div class="accordion-body">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Sl. No.</th>
+                              <th>Technology</th>
+                              <th>Mandatory</th>
+                              <th>Experience</th>
+                              <th>Comments</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td><input type="text" class="form-control" [(ngModel)] ="requisitionDetails[0].skillID" /></td>
+                              <td><input type="text" class="form-control" [(ngModel)]="requisitionDetails[0].mandatory" /></td>
+                              <td><input type="text" class="form-control" [(ngModel)]="requisitionDetails[0].experience" /></td>
+                              <td><input type="text" class="form-control" [(ngModel)]="requisitionDetails[0].comments" /></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading3">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in03" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Resource
+                      </button>
+                    </h2>
+                    <div id="general-in03" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading3">
+                      <div class="accordion-body">
+                        <div class="table-responsive">
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th>Exp. (yrs)</th>
+                                <th>Round 1</th>
+                                <th>Round 2</th>
+                                <th>Round 3</th>
+                                <!--<th>Contact Number</th>-->
+                                <th>Worked with FWS</th>
+                                <th>Resume</th>
+                                <th>Status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><a href="Resource_Details.html">Arif A</a></td>
+                                <td>3</td>
+                                <td>
+                                  <label>03/11/2022 12:00 PM</label>
+                                </td>
+                                <td>
+                                  <label class="disabled">07/11/2022 10:00 AM</label>
+                                </td>
+                                <td>
+                                  <label class="disabled">08/11/2022 11:00 AM</label>
+                                </td>
+                                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                                <td><a href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i></a></td>
+                                <td>Reject</td>
+  
+                              </tr>
+                              <tr>
+                                <td><a href="Resource_Details.html">Shivakumar</a></td>
+                                <td>3</td>
+                                <td>
+                                  <label>23/03/2022 12:00 AM</label>
+                                </td>
+                                <td>
+                                  <label class="">23/03/2022 12:00 AM</label>
+                                </td>
+                                <td>
+                                  <label class="">08/11/2022 11:00 AM</label>
+                                </td>
+                                <!--<td>1234567890</td>-->
+                                <td class="text-center"><i class="bi bi-check-circle text-success"></i></td>
+                                <td><a href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i></a></td>
+                                <td>Round 2</td>
+                              </tr>
+                              <tr>
+                                <td><a href="Resource_Details.html">Srikanth Sherigar</a></td>
+                                <td>3</td>
+                                <td>
+                                  <label class="">03/11/2022 12:00 PM</label>
+                                </td>
+                                <td>
+                                  <label class="">04/11/2022 10:00 AM</label>
+                                </td>
+                                <td>
+                                  <label class="disabled">08/11/2022 11:00 AM</label>
+                                </td>
+                                <td class="text-center"><i class="bi bi-x-circle text-danger"></i></td>
+                                <td><a href="resume.pdf" target="_blank"><i class="bi bi-file-earmark-text"></i></a></td>
+                                <td>Reject</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading5">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in05" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Financial
+                      </button>
+                    </h2>
+                    <div id="general-in05" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading5">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Dept </label><br />
+                            <label><input type="text" class="form-control" [(ngModel)]="requisitionDetails[0].departmentID" readonly/></label>
+                          </div>
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Cost Price Per Hour </label>
+                            <label><input type="text" class="form-control" [(ngModel)]="requisitionDetails[0].estimatedBudget" readonly /></label>
+                          </div>
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Currency </label>
+                            <label><input type="text" class="form-control" [(ngModel)]="requisitionDetails[0].currencyID" readonly /></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading7">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in07" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Requisition Custom Field
+                      </button>
+                    </h2>
+                    <div id="general-in07" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading7">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Business Title  </label>
+                            <label class="form-control-plaintext"> Under writer </label>
+                          </div>
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Is Laptop Required  </label>
+                            <label class="form-control-plaintext"> Yes </label>
+                          </div>
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Is Re hiring work </label>
+                            <label class="form-control-plaintext"> No </label>
+                          </div>
+                          <div class="col-md-3">
+                            <label id="lbl" class="col-form-label"> Will role require fws ID Email </label>
+                            <label class="form-control-plaintext"> Yes </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="text-center">
+                <a routerLink="" class="btn btn-primary">Back to Listing</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="copyright">
+      © 2022 Flatworld Edge All Rights Reserved.
+    </div>
+  </footer>
+  

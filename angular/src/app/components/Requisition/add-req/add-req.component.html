@@ -1,0 +1,506 @@
+<main id="main">
+  <div class="pagetitle"><h1>Create Requisition</h1></div>
+  <section class="section">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body">
+            <form class="needs-validation mb-4" (ngSubmit)="addRequisition()">
+              <div class="row no-gutters">
+                <div class="col-sm-1">
+                  <div class="form-check mt-1 form-switch"> <input class="form-check-input" type="checkbox" id="intCloneReq"> <label class="form-check-label" for="intCloneReq">Clone</label></div>
+                </div>
+                <div class="col-sm-2">
+                  <input id="intCloneReqNumber" type="number" class="form-control" placeholder="Req ID" disabled required />
+                </div>
+                <div class="col-sm-3"><button id="btnCloneReq" type="submit" class="btn btn-primary btn-sm" disabled>Clone Requisition</button></div>
+              </div>
+            </form>
+            <form class="needs-validation" #form="ngForm" (ngSubmit)="addRequisition()">
+              <div class="divForm_bg">
+                <div class="row mt-2">
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <input id="intReqNumber" type="number" class="form-control" disabled value={{disabledNumber}} />
+                      <label for="intReqNumber" class="form-label"><b>Req Code</b></label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <input id="intPotentialID" type="text" class="form-control" placeholder="Potential ID" required />
+                      <label for="intPotentialID" class="form-label">Potential ID</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <select id="selComplexity" class="form-select">
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                      </select>
+                      <label for="selComplexity" class="form-label">Complexity</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <input type="text" id="intRequisitionDate" class="form-control date" placeholder="Requisition Date" required disabled value="{{disabledDate}}" />
+                      <label for="intRequisitionDate" class="form-label"><b>Requisition Date</b></label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <input id="intRequisitionDeadlineDate" type="text" class="form-control date" placeholder="Expected Response Deadline Date" required />
+                      <label for="intRequisitionDeadlineDate" class="form-label">Expected Response Deadline Date</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <input id="intClientName" type="text" class="form-control" placeholder="Client Name" />
+                      <label for="intClientName" class="form-label">Client Name</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <select id="selProjectType" class="form-select" required>
+                        <option selected>FTE</option>
+                        <option>Time and Material</option>
+                        <option value="FixedBid">Fixed Bid</option>
+                      </select>
+                      <label for="selProjectType" class="form-label">Project Type</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <select id="intSalesPerson" class="myselect form-select" placeholder="Sales Person" required>
+                        <option value="33a94d58-f265-47f0-bfe5-63e550d739d2">Kaveramma</option>
+                        <option value="55ac6be4-1ead-43e6-9401-805ca0eb65e5">Deepthi</option>
+                        <option value="4793256a-bb14-4966-9e31-82abe64f65a1">Danish Rizvi</option>
+                        <option value="012a7998-f69f-455d-a1f5-f22b84030c71">Sandeep Moolya</option>
+                        <option value="78770569-2549-4ab2-9d39-1cca5a8cfbba">Salman Khan</option>
+                        <option value="dd2b9367-b68a-429b-9637-4bff7c6d9649">Sudeep M</option>
+                      </select>
+                      <label for="intSalesPerson" class="form-label">Sales Person</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <br /><select id="intPMName" class="form-control" [(ngModel)]="selectedPM" placeholder="PM Name" required name="projectmanager" #refPm="ngModel" multiple>
+                        <option value="Undefined">Please Select Project Manager</option>
+                        <option *ngFor="let pm of ProjectManager" [ngValue]="pm.projectManagerID">{{pm.projectManagerName}}</option>
+                      </select>
+                      <label for="intPMName" class="form-label">PM Name</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <select id="intInterviewStatus" class="form-select" placeholder="Interview Status" required>
+                        <option value="0" selected>Open</option>
+                        <option value="1">Closed</option>
+                      </select>
+                      <label for="intInterviewStatus" class="form-label">Requisition Status</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-floating">
+                      <input id="intProjectExpectedStartDate" class="form-control dateFiller" placeholder="Project Expected Start Date" required />
+                      <label for="intProjectExpectedStartDate" class="form-label">Project Expected Start Date</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <h4 class="heading-btm mt-3 mb-3">General Information</h4>
+                <div class="accordion mb-5" id="accordionRequisition">
+                  <div class="accordion-item" id="JobDescription">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading1">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general-in01" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Job Description
+                      </button>
+                    </h2>
+                    <div id="general-in01" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading1" data-bs-parent="#accordionRequisition">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <div class="form-floating">
+                              <input id="intJobDesc" type="text" class="form-control" placeholder="Job Description / Specific Skillset" />
+                              <label for="intJobDesc" class="form-label">Job Description / Specific Skillset</label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <label for="intJobDesc" class="lblFloatcustom">Duration / Tenure</label>
+                            <div class="input-group m--15px">
+                              <input type="text" class="form-control" name="" placeholder="#">
+                              <select class="form-select" id="inputGroupSelect01">
+                                <option value="1">Hours</option>
+                                <option value="2">Months</option>
+                                <option value="3">Yearly</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-floating">
+                              <input id="intShiftTime" type="text" class="form-control" placeholder="Shift timing / TimeZone / Overlap" />
+                              <label for="intShiftTime" class="form-label">Shift timing / TimeZone / Overlap</label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-floating">
+                              <input id="intResources" type="text" class="form-control" placeholder="Number of resources" />
+                              <label for="intResources" class="form-label">Number of resources</label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-floating">
+                              <input id="intOpenPositions" type="text" class="form-control" placeholder="Open Positions" />
+                              <label for="intOpenPositions" class="form-label">Open Positions</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="desc-list-info">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <h6>Key</h6>
+                              <textarea rows="10" class="form-control"></textarea>
+                              <div class="row mt-3">
+                                <label for="inputNumber" class="col-sm-1 col-form-label">Upload</label><div class="col-sm-11"> <input class="form-control" type="file" id="formFile"></div>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <div class="form-floating">
+                                    <input id="intPreferredEducation" type="text" class="form-control" placeholder="Preferred Education" />
+                                    <label for="intPreferredEducation" class="form-label">Preferred Education</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-floating">
+                                    <input id="intMinimumexperience" type="number" class="form-control" placeholder="Minimum experience" />
+                                    <label for="intMinimumexperience" class="form-label">Minimum Experience</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="form-floating">
+                                    <input id="intMaximumexperience" type="text" class="form-control" placeholder="Maximum experience" />
+                                    <label for="intMaximumexperience" class="form-label">Maximum Experience</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" id="SkillsExp">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading2">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in02" aria-expanded="false">
+                        Skills & Experience
+                      </button>
+                    </h2>
+                    <div id="general-in02" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading2" data-bs-parent="#accordionRequisition">
+                      <div class="text-end mt-2">
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#skillsExp">
+                          Add Skills & Experience
+                        </button>
+                      </div>
+                      <div class="accordion-body">
+                        <table id="example" class="table table-striped mytable-new" style="width:100%">
+                          <thead>
+                            <tr>
+                              <th>Sl. No.</th>
+                              <th>Technology</th>
+                              <th>Mandatory</th>
+                              <th>Experience</th>
+                              <th>Comments</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let data of skillDataArray; index as i">
+                              <td>{{i+1}}</td>
+                              <td>{{data.dropdown}}</td>
+                              <td>{{data.dropdown2}}</td>
+                              <td>{{data.dropdown3}}</td>
+                              <td>{{data.Comments}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item" id="divFixedBid" style="display: none;">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading5">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#general-in05" aria-expanded="true">
+                        Project Documentation
+                      </button>
+                    </h2>
+                    <div id="general-in05" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-heading5" data-bs-parent="#accordionRequisition">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-floating">
+                              <textarea class="form-control" rows="4"></textarea>
+                              <label for="intRateApplication" class="form-label">Project Description</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6" id="FixBidStatement">
+                            <div class="form-floating">
+                              <input type="file" class="form-control" />
+                              <label for="intRateApplication" class="form-label">Statement of work</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6" id="FixBidDocument">
+                            <div class="form-floating">
+                              <input type="file" class="form-control" />
+                              <label for="intRateApplication" class="form-label">Documents</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading5">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in05" aria-expanded="false">
+                        Financial
+                      </button>
+                    </h2>
+                    <div id="general-in05" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading5" data-bs-parent="#accordionRequisition">
+                      <div class="accordion-body">
+                        <div class="row">
+                          <div class="col-md-3">
+                            <div class="form-floating">
+                              <select id="selDepartment" class="form-control" [(ngModel)]="selectedDepartment" placeholder="Departments" required name="Department" #refdept="ngModel">
+                                <option *ngFor="let dept of Departments" [ngValue]="dept.departmentID">{{dept.departmentName}}</option>
+                              </select>
+                              <label for="selDepartment" class="form-label">Department</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-floating">
+                              <input id="intBudget" type="text" class="form-control" placeholder="Budget" />
+                              <label for="intBudget" class="form-label">Budget</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-floating">
+                              <select id="intRateApplication" class="form-control" [(ngModel)]="selectedCurrency" placeholder="Currency" required name="Currency" #refcur="ngModel">
+                                <option *ngFor="let cur of Currency" [ngValue]="cur.currencyID">{{cur.currencyName}}</option>
+                              </select>
+                              <label for="intRateApplication" class="form-label">Currency</label>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3" id="FixBiTimeLine" style="display:none;">
+                            <label for="lblTimeLine" class="lblFloatcustom">Time Line</label>
+                            <div class="input-group m--15px">
+                              <input type="text" class="form-control" name="" placeholder="#">
+                              <select class="form-select" id="inputGroupSelect01">
+                                <option>Hour(s)</option>
+                                <option>Day(s)</option>
+                                <option>Week(s)</option>
+                                <option>Month(s)</option>
+                                <option>Year(s)</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-md-3" id="FixBidStartDate" style="display: none;">
+                            <div class="form-floating">
+                              <input type="text" class="form-control date" />
+                              <label for="intRateApplication" class="form-label">Start Date</label>
+                            </div>
+                          </div>
+                          <div class="col-md-3" id="FixBidEndDate" style="display: none;">
+                            <div class="form-floating">
+                              <input type="text" class="form-control date" />
+                              <label for="intRateApplication" class="form-label">End Date</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="panelsStayOpen-heading7">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#general-in07" aria-expanded="false">
+                        Assign to Partner
+                      </button>
+                    </h2>
+                    <div id="general-in07" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading7" data-bs-parent="#accordionRequisition">
+                      <div class="accordion-body">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="intSearchPartner" placeholder="Search Partner">
+                          <label for="intSearchPartner" class="form-label">Search Partner</label>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <div class="divSearchselect">
+                              <ul class="list-group">
+                                <li class="list-group-item"> <input id="intChk1" class="form-check-input me-1" type="checkbox" checked value="" aria-label="..."> <label for="intChk1">A to Z Solutions</label></li>
+                                <li class="list-group-item"> <input id="intChk2" class="form-check-input me-1" type="checkbox" value="" aria-label="..."> <label for="intChk2">Bacany</label></li>
+                                <li class="list-group-item"> <input id="intChk3" class="form-check-input me-1" type="checkbox" value="" aria-label="..."> <label for="intChk3">Harapz</label></li>
+                                <li class="list-group-item"> <input id="intChk4" class="form-check-input me-1" type="checkbox" checked value="" aria-label="..."> <label for="intChk">Sight Spectrum</label></li>
+                                <li class="list-group-item"> <input id="intChk5" class="form-check-input me-1" type="checkbox" value="" aria-label="..."> <label for="intChk5">Sowedane</label></li>
+                                <li class="list-group-item"> <input id="intChk6" class="form-check-input me-1" type="checkbox" checked value="" aria-label="..."> <label for="intChk6">Talent Sketchers</label></li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="divSearchselect">
+                              <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true">Selected</li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"> A to Z Solutions <a href="#!" class="badge bg-primary rounded-pill">X</a></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"> Sight Spectrum <a href="#!" class="badge bg-primary rounded-pill">X</a></li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center"> Talent Sketchers <a href="#!" class="badge bg-primary rounded-pill">X</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class=" text-center">
+                <button class="btn btn-secondary" onclick="history.back()">Cancel</button> &nbsp;
+                <button class="btn btn-primary" type="submit" (click)="addRequisition()">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<form #form1="ngForm" (ngSubmit)="onSubmit()">
+  <div class="modal fade" id="skillsExp">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Skills & Experience</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-floating">
+                <select id="intTechnology" class="form-control" [(ngModel)]="selectedskill" placeholder="Skills" required name="Skill" #refskill="ngModel" >
+                  <option value="Undefined">Please Select Skill</option>
+                  <option *ngFor="let skil of Skills"  [ngValue]="skil.skillID + '_' + skil.skillName" name="skil">{{skil.skillName}}</option>
+                </select>
+                <label for="intTechnology" class="form-label">Technology</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating">
+                <select class="form-select" id="selMandatory" [(ngModel)]="selectedMandatory" name="mand">
+                  <option value="0_Yes">Yes</option>
+                  <option value="1_No">No</option>
+                </select>
+                <label for="selMandatory" class="form-label">Mandatory</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating">
+                <select class="form-select" id="selMandatory" [(ngModel)]="selectedExperience" name="exper">
+                  <option [ngValue]="1">1</option>
+                  <option [ngValue]="2">2</option>
+                  <option [ngValue]="3">3</option>
+                  <option [ngValue]="4">4</option>
+                  <option [ngValue]="5">5</option>
+                  <option [ngValue]="6">6</option>
+                  <option [ngValue]="7">7</option>
+                  <option [ngValue]="8">8</option>
+                  <option [ngValue]="9">9</option>
+                  <option [ngValue]="10">10</option>
+                </select>
+                <label for="selMandatory" class="form-label">Experience</label>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating">
+                <textarea class="form-control" rows="4" id="textComments" placeholder="Comments" [(ngModel)]="comments" name="com"></textarea>
+                <label for="textComments" class="form-label">Comments</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#successModal" (click)="onSubmit()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div id="successModal" class="modal fade delete-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <i class="bi bi-check-circle modal-successIco"></i>
+        <h3>Added successfully</h3>
+        <div class="m-t-20">
+          <button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="copyright">
+    © 2022 Flatworld Edge All Rights Reserved.
+  </div>
+</footer>
+<script src="./js/jquery-3.5.1.js"></script>
+<script src="./js/moment.min.js"></script>
+<script src="./js/daterangepicker.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/jquery.dataTables.min.js"></script>
+<script src="./js/dataTables.bootstrap5.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+  $('#intCloneReq').on('change', function (event, state) {
+    var status = $('#intCloneReqNumber').prop('disabled');
+    $('#intCloneReqNumber').prop('disabled', !status);
+    $('#btnCloneReq').prop('disabled', !status);
+  });
+  // Project Type
+  $(document).ready(function () {
+    $('#selProjectType').on('change', function () {
+      if (this.value == 'FixedBid') {
+        $("#JobDescription").hide();
+        $("#SkillsExp").hide();
+        $("#divFixedBid").show();
+        $("#FixBidStartDate").show();
+        $("#FixBidEndDate").show();
+        $("#FixBiTimeLine").show();
+      }
+      else {
+        $("#JobDescription").show();
+        $("#SkillsExp").show();
+        $("#divFixedBid").hide();
+        $("#FixBidStartDate").hide();
+        $("#FixBidEndDate").hide();
+        $("#FixBiTimeLine").hide();
+      }
+    });
+  });
+</script>
+<script>
+  const input = document.getElementById('intRequisitionDeadlineDate');
+
+  input.addEventListener('input', () => {
+    const inputDate = new Date(input.value);
+    const currentDate = new Date();
+    if (inputDate <= currentDate) {
+      // The input date is in the past, so show an error message
+      input.setCustomValidity('Expected Response Deadline Date must be a future date');
+    } else {
+      // The input date is in the future, so clear the error message
+      input.setCustomValidity('');
+    }
+  });
+
+</script>

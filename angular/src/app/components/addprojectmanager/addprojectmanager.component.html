@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+</head>
+
+<body>
+
+
+
+  <main id="main">
+
+    <div class="pagetitle"><h1>Add Project Manager</h1></div>
+
+    <section class="section">
+
+      <div class="row">
+
+        <div class="col-md-4 col-sm-4 col-12">
+
+          <div class="card">
+
+            <div class="card-body">
+
+              <!--<div class="profile-img">
+
+                <img src="./images/placeholder.jpg" class="img-fluid">
+
+                <input class="form-control" name="photo" type="file" id="formFile" [(ngModel)]="addProjectManagerRequest.pmPhoto">
+
+              </div>-->
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-8 col-sm-4 col-12">
+
+          <div class="card">
+
+            <div class="card-body">
+
+              <form class="needs-validation" #form="ngForm" (ngSubmit)="addEmployee()">
+
+                <div class="row mt-2">
+
+                  <div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intEmployeeID" name="Id" type="number" class="form-control" placeholder="Employee ID" required [(ngModel)]="addProjectManagerRequest.employeeID">
+
+                      <label for="intEmployeeID" class="form-label">Employee ID</label>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intEmployeeName" name="name" type="text" class="form-control" placeholder="Employee Name" required [(ngModel)]="addProjectManagerRequest.projectManagerName">
+
+                      <label for="intEmployeeName" class="form-label">Employee Name</label>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intJoiningDate" name="joindate" type="date" class="form-control date ng-pristine ng-invalid ng-touched" placeholder="Joined Date" required [(ngModel)]="addProjectManagerRequest.joiningDate">
+
+                      <label for="intJoiningDate" class="form-label">Joined Date</label>
+
+                    </div>
+
+                  </div>
+
+
+                  <!--<div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intQualification" type="text" class="form-control" placeholder="Qualification" required>
+
+                      <label for="intQualification" class="form-label">Qualification</label>
+
+                    </div>
+
+                  </div>-->
+                  <!--<div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intLanguagesKnown" type="text" class="form-control" placeholder="Languages Known" required>
+
+                      <label for="intLanguagesKnown" class="form-label">Languages Known</label>
+
+                    </div>
+
+                  </div>-->
+                  <!--<div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intSkills" name="skill" type="text" class="form-control" placeholder="Skills" required [(ngModel)]="addProjectManagerRequest.joiningDate" >
+
+                      <label for="intSkills" class="form-label">Skills</label>
+
+                    </div>
+
+                  </div>-->
+                  <!--<div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intExperience" type="number" class="form-control" placeholder="Experience (yrs)" required>
+
+                      <label for="intExperience" class="form-label">Experience (yrs)</label>
+
+                    </div>
+
+                  </div>-->
+
+                  <div class="col-sm-12 col-xl-6" aria-required="true">
+
+                    <div class="form-floating" aria-required="true">
+
+                      <input id="intEmailID" name="email" type="email" class="form-control" placeholder="Email ID" required [(ngModel)]="addProjectManagerRequest.pmEmailID">
+
+                      <label for="inEmailID" class="form-label">Email ID</label>
+
+                    </div>
+
+                  </div>
+
+                  <div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intContactNumber" name="mobile" type="number" class="form-control" placeholder="Contact Number" required [(ngModel)]="addProjectManagerRequest.pmPhoneNumber">
+
+                      <label for="inContactNumber" class="form-label">Contact Number</label>
+
+                    </div>
+
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intStatus" name="status" type="number" class="form-control" placeholder="Contact Number" required [(ngModel)]="addProjectManagerRequest.pmStatus">
+
+                      <label for="intStatus" class="form-label">Status</label>
+
+                    </div>
+
+                  </div>
+                  <!--<div class="col-sm-12 col-xl-6">
+
+                    <div class="form-floating">
+
+                      <input id="intUserID" name="userid" type="text" class="form-control" placeholder="user" required [(ngModel)]="addProjectManagerRequest.pmUserID">
+
+                      <label for="intUserID" class="form-label">UserID</label>
+
+                    </div>
+
+                  </div>-->
+
+                </div>
+
+                <div class="col-12 text-end mt-1">
+
+                  <button class="btn btn-secondary" onclick="" routerLink=''>Cancel</button>
+
+                  <button class="btn btn-primary" type="submit">Submit</button>
+
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

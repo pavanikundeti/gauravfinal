@@ -1,0 +1,109 @@
+<body>
+<main id="main">
+    <div class="pagetitle">
+        <div class="row">
+            <div class="col-sm-6"><h1>Partner Details</h1></div>
+            <div class="col-sm-6 text-end">
+              <a [routerLink]="['edit',partnerDetails.partnerID]" class="btn btn-primary btn-sm">Edit</a>
+              <button type="button" (click)="deletePartner(partnerDetails.partnerID)" class="btn btn-danger btn-sm">Delete</button>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="profile-img">
+                            <img src="./images/placeholder.jpg" class="img-fluid" />
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-4 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="needs-validation" novalidate="">
+                          <div class="row mt-2">
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="partnerName" name="name" type="text" class="form-control" placeholder="Partner Name" readonly [(ngModel)]="partnerDetails.partnerName">
+
+                                <label for="partnerName" class="form-label">Partner Name</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="partnerLocation" name="location" type="text" class="form-control" placeholder="Location" readonly [(ngModel)]="partnerDetails.location">
+
+                                <label for="partnerLocation" class="form-label">Location</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="partnerCountry" name="country" type="text" class="form-control" placeholder="Country" readonly [(ngModel)]="partnerDetails.countryID">
+
+                                <label for="partnerCountry" class="form-label">Country</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="regDate" name="regdate" type="text" class="form-control" placeholder="Registered Date" readonly [(ngModel)]="partnerDetails.registeredDate">
+
+                                <label for="partnerCountry" class="form-label">Registered Date</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="spoc" name="spoc" type="text" class="form-control" placeholder="SPOC" readonly [(ngModel)]="partnerDetails.spocUserID">
+
+                                <label for="spoc" class="form-label">SPOC</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="status" name="status" type="text" class="form-control" placeholder="Status" readonly [(ngModel)]="partnerDetails.partnerStatus">
+
+                                <label for="status" class="form-label">Status</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="address" name="address" type="text" class="form-control" placeholder="Address" readonly [(ngModel)]="partnerDetails.address1">
+
+                                <label for="address" class="form-label">Address</label>
+
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-xl-6">
+                              <div class="form-floating">
+
+                                <input id="billingaddress" name="billingaddress" type="text" class="form-control" placeholder="Billing Address" readonly [(ngModel)]="partnerDetails.billingAddress1">
+
+                                <label for="billingaddress" class="form-label">Billing Address</label>
+
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>

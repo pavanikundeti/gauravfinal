@@ -1,0 +1,196 @@
+/*.btn-primary{
+    background-color: #2a4cab;
+    text-transform: none;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-bg: #4571eb;
+    --bs-btn-hover-border-color: #0a58ca;
+}*/
+.body-wrap{
+    background-color: #0b29a3;
+    font-family: 'Public Sans', sans-serif !important;
+    font-size: 1rem;
+}
+.body-wrapper{
+    display: flex;
+    flex-basis: 100%;
+    min-height: 100vh;
+    width: 100%;
+    align-items: flex-start;
+
+}
+.login-inner{
+    width: 100%;
+    height: 100vh;   
+}
+.loginbg{
+    background-color: #fff;
+}
+.w-px-400 {
+    width: 340px !important;
+}
+/*css for office365 SignIn*/
+.miscro-box {
+    background-color: #d73b02;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    height: 40px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.sp {
+    background-image: url(https://demo.flatworldinfotech.com/Fusion/images/spsprite.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.sp.outlook-icon {
+    background-position: -2px -5px;
+    width: 40px;
+    height: 40px;
+    border-right: 1px solid #cc0000;
+}
+.miscro-box .lineleft {
+    height: 34px;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: top;
+    padding-top: 8px;
+    font-weight: 600;
+}
+/* css for google signIn*/
+.google-box {
+    color: #282a3c;
+    font-size: 14px;
+    font-family: Roboto;
+    margin-right: 5px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #adb3b9;
+    width: 100%;
+}
+.sp.googleln-icon {
+    background-position: -48px -7px;
+    width: 39px;
+    height: 38px;
+    border-right: 1px solid #adb3b9;
+}
+.google-box .lineleft {
+    height: 34px;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: top;
+    padding-top: 8px;
+    font-weight: 600;
+}
+/*css for divider*/
+.divider {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.divider-text {
+    position: relative;
+    display: inline-block;
+    font-size: .8rem;
+    padding: 0rem 1rem;
+}
+.divider .divider-text:before, .divider .divider-text:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    border-top: 1px solid rgba(67,89,113,.2);
+    
+}
+
+.divider .divider-text:after {
+    left: 100%;
+}
+.divider .divider-text:before {
+    right: 100%;
+}
+/*css for form */
+.form-floating{
+    position: relative;
+    margin-bottom: 1.5rem !important;
+ 
+}
+.form-control {
+    width: 100%;
+    /*box-sizing: content-box;
+	padding: 0;*/
+    -webkit-transition: box-shadow .3s,border .3s;
+    transition: box-shadow .3s,border .3s;
+    border: none;
+    border-bottom: 1px solid #d9dee3;
+    border-radius: 0;
+    outline: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+.form-floating > .form-control{
+    height: calc(2.5rem + 2px) !important;
+    line-height: 2.25 !important;
+}
+.form-floating > label {
+    padding: 0rem .25rem !important;
+}
+.input-group > .form-control{
+    padding: 0.25rem 0.35rem !important;
+    font-size: 16px !important;
+}
+
+.input-group>.form-control{
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+}
+
+.input-group-text {
+    background-color: transparent !important;
+    border-bottom: 1px solid #d9dee3 !important;
+    border: none;
+    border-radius: 0px;
+}
+
+/*css for forgotpassword*/
+.link-forgotpswd a {
+    color: #44599b;
+    text-decoration: none;
+    float: right;
+}
+
+/*css for SignIn button*/
+.btn-primary {
+    background-color: #2a4cab !important;
+    border: 0px solid #FFF;
+    border-style:solid ;
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0.125rem 0.25rem 0 rgb(105 108 255 / 40%) !important;
+       
+}  
+.btn {
+       
+    line-height: 23.7px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .5px;
+    color: #fff !important;
+        
+}
+.btn-primary:hover {
+    background-color: #4f5ccd !important;
+}
+
+
+
+
+
+
+
+

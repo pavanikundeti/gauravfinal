@@ -1,0 +1,208 @@
+<!--<head>
+<link rel="stylesheet" href="../../../css/bootstrap-icons.css"/>
+</head>-->
+<body>
+
+  <main id="main">
+    <div class="pagetitle">
+      <div class="row">
+        <div class="col-sm-6"><h1>Project Managers Details</h1></div>
+        <div class="col-sm-6 text-end">
+          <a [routerLink]="['edit', employeeDetails.projectManagerID]" class="btn btn-primary btn-sm">Edit</a>
+          <button class="btn btn-danger" type="button" (click)="deleteEmployee(employeeDetails.projectManagerID)">Delete</button>
+        </div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="profile-img">
+                <img src="./images/placeholder.jpg" class="img-fluid">
+                <input class="form-control" type="file" id="formFile">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-4 col-12">
+          <div class="card">
+            <div class="card-body">
+              <form class="needs-validation" novalidate="">
+                <div class="row mt-2">
+                  <!--<div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Employee ID</label>
+                  <label class="form-control-plaintext">1307</label>
+                  </div>-->
+                  <div class="col-sm-12 col-xl-6">
+                    <div class="form-floating">
+
+
+
+                      <input id="intEmployeeID" name="Id" type="text" class="form-control" placeholder="Employee ID" readonly [(ngModel)]="employeeDetails.employeeID">
+
+
+
+
+                      <label for="intEmployeeID" class="form-label">Employee ID</label>
+
+
+
+                    </div>
+                  </div>
+                  <!--<div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Employee Name</label>
+                  <label class="form-control-plaintext">1201964</label>
+                  </div>-->
+                  <div class="col-sm-12 col-xl-6">
+
+
+
+                    <div class="form-floating">
+
+
+
+                      <input id="intEmployeeName" name="name" type="text" class="form-control" placeholder="Employee Name" readonly [(ngModel)]="employeeDetails.projectManagerName">
+
+
+
+                      <label for="intEmployeeName" class="form-label">Employee Name</label>
+
+
+
+                    </div>
+
+
+
+                  </div>
+                  <!--<div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Joining Date</label>
+                  <label class="form-control-plaintext">1201964</label>
+                  </div>-->
+                  <div class="col-sm-12 col-xl-6">
+
+
+
+                    <div class="form-floating">
+
+
+
+                      <input id="intJoiningDate" name="joindate" type="text" class="form-control date ng-pristine ng-invalid ng-touched" placeholder="Joined Date" readonly [(ngModel)]="employeeDetails.joiningDate">
+
+
+
+                      <label for="intJoiningDate" class="form-label">Joined Date</label>
+
+
+
+                    </div>
+
+
+
+                  </div>
+                  <!--<div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Qualification</label>
+                  <label class="form-control-plaintext">MCA</label>
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Languages Known</label>
+                  <label class="form-control-plaintext">English, Hindi, Malayalam</label>
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Skills</label>
+                  <label class="form-control-plaintext">ASP.Net, Jquery</label>
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Experience (yrs)</label>
+                  <label class="form-control-plaintext">12</label>
+                  </div>-->
+                  <!--<div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Email ID</label>
+                  <label class="form-control-plaintext">Baijumon.P@flatworldsolutions.com</label>
+                  </div>-->
+                  <div class="col-sm-12 col-xl-6" aria-required="true">
+
+
+
+                    <div class="form-floating" aria-required="true">
+
+
+
+                      <input id="intEmailID" name="email" type="email" class="form-control" placeholder="Email ID" readonly [(ngModel)]="employeeDetails.pmEmailID">
+
+
+
+                      <label for="inEmailID" class="form-label">Email ID</label>
+
+
+
+                    </div>
+
+
+
+                  </div>
+                  <!--<div class="col-sm-12 col-xl-6">
+                  <label for="staticEmail" class="col-form-label">Contact Number</label>
+                  <label class="form-control-plaintext">99862 08782</label>
+                  </div>-->
+                  <div class="col-sm-12 col-xl-6">
+
+
+
+                    <div class="form-floating">
+
+
+
+                      <input id="intContactNumber" name="mobile" type="number" class="form-control" placeholder="Contact Number" readonly [(ngModel)]="employeeDetails.pmPhoneNumber">
+
+
+
+                      <label for="inContactNumber" class="form-label">Contact Number</label>
+
+
+
+                    </div>
+
+
+
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+
+
+
+                    <div class="form-floating">
+
+
+
+                      <input id="intStatus" name="status" type="number" class="form-control" placeholder="Contact Number" readonly [(ngModel)]="employeeDetails.pmStatus">
+
+
+
+                      <label for="intStatus" class="form-label">Status</label>
+
+
+
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+
+
+</body>
+
+

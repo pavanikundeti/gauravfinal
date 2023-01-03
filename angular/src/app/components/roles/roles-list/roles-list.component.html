@@ -1,0 +1,131 @@
+<main id="main">
+  <div class="pagetitle">
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>Role Management</h1>
+      </div>
+      <div class="col-sm-6 text-end">
+        <!-- modal -->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+          Add Role
+        </button>
+      </div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-12" style="width:100%">
+        <div class="card">
+          <div class="card-body">
+            <div class="main-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th><b>Role</b></th>
+                    <th><b>Description</b></th>
+                    <th><b>Action</b></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let role of roles">
+                    <td>{{role.name}}</td>
+                    <td>{{role.normalizedName}}</td>
+                    <td>
+                      <a [routerLink]="['/roles/permission/list/'+role.id]" class="me-3">
+                        <i class="bi bi-person-fill"
+                           style="color:black"></i>
+                      </a>
+                      <a data-bs-toggle="modal" (click)="editRole(role.name,role.normalizedName,role.id)" class="me-3 pointer">
+                        <i class="bi bi-pencil-square "
+                           data-bs-toggle="modal" data-bs-target="#editModal"></i>
+                      </a>
+                      <a (click)="deleteRole(role.id)" class="me-3">
+                        <i class="bi pointer bi-trash" style="color: red;"
+                           data-bs-toggle="modal" data-bs-target="#deletemodal"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal for addition -->
+      <div class="modal fade custom-modal" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Role</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form #addressForm="ngForm">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label custom-label3">Role:</label>
+                  <input type="text" [(ngModel)]="addR.name" #it="ngModel" class="form-control" name="name">
+                  <p class="text-danger">{{validator.name}}</p>
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label custom-label1">
+                    Description
+                  </label>
+                  <input type="text" [(ngModel)]="addR.normalizedName" #it="ngModel" class="form-control" name="description">
+                  <p class="text-danger">{{validator.desc}}</p>
+                </div>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" (click)="addRole()" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal end -->
+      <!-- Modal for updation -->
+      <div class="modal fade custom-modal-edit" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Role</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form #addressForm="ngForm">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label custom-label3">Role:</label>
+                  <input type="text" [(ngModel)]="edit.name" #it="ngModel" class="form-control" name="name" required>
+                  <p class="text-danger">{{validator.name}}</p>
+                </div>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label custom-label1">
+                    Description
+                    :
+                  </label>
+                  <input type="text" [(ngModel)]="edit.description" #it="ngModel" class="form-control" name="description" required>
+                  <p class="text-danger">{{validator.desc}}</p>
+                </div>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" (click)="updateUser()" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal end -->
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="copyright">
+    © 2022 Flatworld Edge All Rights Reserved.
+  </div>
+</footer>

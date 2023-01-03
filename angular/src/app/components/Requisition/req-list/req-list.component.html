@@ -1,0 +1,159 @@
+<main id="main">
+    <div class="pagetitle">
+      <div class="row">
+        <div class="col-sm-6"><h1>Requisition</h1></div>
+        <div class="col-sm-6 text-end">
+          <a routerLink="addrequisitions" class="btn btn-primary btn-sm">Add Requisition</a>
+        </div>
+      </div>
+    </div>
+    <div class="pagetitle"><h1></h1></div>
+    <section class="section">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="divFilter_bg">
+                <div class="row">
+                  <div class="col-sm-2 col-md-2">
+                    <div class="form-floating">
+                      <input type="text" class="form-control dateFiller" id="intRequisitiondate" placeholder="Requisition date" />
+                      <label for="intRequisitiondate" class="form-label">Requisition date</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-2 col-md-2">
+                    <div class="form-floating">
+                      <select class="form-select" id="selStatus">
+                        <option value="">Select</option>
+                        <option>Open</option>
+                        <option>Submitted</option>
+                        <option>Review-In-Progress</option>
+                        <option>Closed</option>
+                        <option>Cancelled</option>
+                      </select>
+                      <label for="selStatus">Status</label>
+                    </div>
+  
+                  </div>
+                  <div class="col-sm-2 col-md-2">
+                    <div class="form-floating">
+                      <select class="form-select" id="selLocation">
+                        <option value="">Select</option>
+                        <option>Bangalore Karnataka</option>
+                        <option>Us</option>
+                        <option>UK</option>
+                      </select>
+                      <label for="selLocation">Location</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="main-table" *ngFor="let list of lists; index as i" [ngClass]="{ 'active': selectedList == list }">
+                <div>
+                    <div id="accordion" class="accordion mt-2 custom-accordian">
+                      <div class="card">
+                        <div class="card-header campaign" campaign="5" id="headingOne">
+                          <div class="row">
+                            <div class="col">
+                              <label class="col-form-label">Req #</label><br />
+                              <label><a [routerLink]="['details',list.requisitionID]">{{list.requisitionID}}</a></label>
+                            </div>
+                            <div class="col">
+                              <label class="col-form-label">Potential ID</label><br />
+                              {{list.potentialNumber}}
+                            </div>
+                            <div class="col">
+                              <label class="col-form-label">Requisition Date</label><br />
+                              {{list.requisitionDate}}
+                            </div>
+                            <div class="col">
+                              <label class="col-form-label">Client</label><br />
+                                                                          <label>{{list.clientName}}</label>
+                            </div>
+                            <div class="col">
+                              <label class="col-form-label">Project Type</label><br />
+                              {{list.projectType}}
+                            </div>
+                            <div class="col">
+                              <label class="col-form-label">Status</label><br />
+                              {{list.requisitionStatus}}
+                            </div>
+                            <div class="col">
+                              <label class="col-form-label">	Action</label>
+                              <label id="lblProjectType" class="form-control-plaintext  pb-0">
+                                <a class="me-3" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil-square" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"></i></a>
+                                <button id="listOptions" class="btn btn-default float-end" title="List Options..."
+                                        (click)="list.requisitionID">
+                                  <i data-bs-toggle="tooltip" title="" class="bi bi-cloud-download-fill" data-bs-original-title="Download" aria-label="Download"></i>
+                                  </button>
+                              </label>
+                            </div>
+                            <a class="toggleDetails collapsed" data-bs-toggle="collapse" data-bs-target="#accordian0"><span data-bs-toggle="tooltip" title="Details" aria-expanded="false" aria-controls="collapseOne"></span></a>
+                          </div>
+                        </div> 
+                        <div id="accordian0" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
+                          <div class="card-body">
+                            <table id="example" class="table" style="width:100%">
+                              <thead>
+                                <tr>
+                                  <th>Partner Name</th>
+                                  <th>Resource Name</th>
+                                  <th>Interview Level</th>
+                                  <th>Interview Date</th>
+                                  <th>Applicant Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><a href="Partners.html">Sight Spectrum</a></td>
+                                  <td><a href="Resource_Details.html">Srikanth Sherigar</a></td>
+                                  <td>Round 1</td>
+                                  <td>01/11/2022</td>
+                                  <td>Rejected</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="Partners.html">Bacany</a></td>
+                                  <td><a href="Resource_Details.html">Tharun Shetty</a></td>
+                                  <td>Round 2</td>
+                                  <td>01/11/2022</td>
+                                  <td>Tech Interview II - Scheduled</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="Partners.html">Sowedane</a></td>
+                                  <td><a href="Resource_Details.html">Kaveri</a></td>
+                                  <td>Round 1</td>
+                                  <td>01/11/2022</td>
+                                  <td>Tech Interview II - Scheduled</td>
+                                </tr>
+                                <tr>
+                                  <td><a href="Partners.html">Bacany</a></td>
+                                  <td><a href="Resource_Details.html">Arun S</a></td>
+                                  <td>Round 1</td>
+                                  <td>01/11/2022</td>
+                                  <td>Tech Interview II - Scheduled</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  </main>
+  
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script src="./js/moment.min.js"></script>
+  <script src="./js/daterangepicker.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/jquery.dataTables.min.js"></script>
+  <script src="./js/dataTables.bootstrap5.min.js"></script>
+  <script src="js/select2.min.js"></script>
+  <script src="js/app.js"></script>
